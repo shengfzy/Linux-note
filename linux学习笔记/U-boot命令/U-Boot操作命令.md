@@ -165,7 +165,7 @@
 
   > go addr[arg ...]
   >
-  > ![mmc read](./image/![mmc read](./image/fatwrite.png).png)
+  > ![mmc read](./image/fatwrite.png)
 
 - run: 用于运行环境变量中定义的命令
 
