@@ -91,6 +91,11 @@
    - DeviceTree即可
    - Python
    - Python Snippets
+   - Local History
+   - Todo Tree
+   - Better Comments
+   - Better Align
+   - change-case
 
 10. windows下下载安装Xshell串口调试软件，用这个软件主要应为它界面看着贼舒服
 
