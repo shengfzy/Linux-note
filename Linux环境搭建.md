@@ -1,82 +1,82 @@
-#### ubuntu»·¾³ÅäÖÃ
+#### ubuntuç¯å¢ƒé…ç½®
 
-> Ubuntu°æ±¾19.10
+> Ubuntuç‰ˆæœ¬19.10
 >
-> µÚÒ»²¿·Ö¿ª·¢»·¾³´î½¨
+> ç¬¬ä¸€éƒ¨åˆ†å¼€å‘ç¯å¢ƒæ­å»º
 >
-> µÚ¶ş²¿·Öwindows³£ÓÃÈí¼ş°²×°
+> ç¬¬äºŒéƒ¨åˆ†windowså¸¸ç”¨è½¯ä»¶å®‰è£…
 
 --------
 
-1. github°²×°
+1. githubå®‰è£…
 
    - `sudo apt-get install git`
    - `git config --global user.name "your name"`
    - `git config --global user.email "your _email@youremail.com"`
-   - `ssh-keygen -t rsa -C "your_email@your email.com"`Ö®ºó»áÔÚ~/ÏÂÉú³É.sshÎÄ¼ş¼Ğ
-   - `cat ~/.ssh/id_rsa.pub`¸´ÖÆkey£¬²¢¼ÓÈëµ½github×Ô¼º²Ö¿âµÄssh keyÖĞ
-   - `ssh -T git@github`ÑéÖ¤ÊÇ·ñ³É¹¦
+   - `ssh-keygen -t rsa -C "your_email@your email.com"`ä¹‹åä¼šåœ¨~/ä¸‹ç”Ÿæˆ.sshæ–‡ä»¶å¤¹
+   - `cat ~/.ssh/id_rsa.pub`å¤åˆ¶keyï¼Œå¹¶åŠ å…¥åˆ°githubè‡ªå·±ä»“åº“çš„ssh keyä¸­
+   - `ssh -T git@github`éªŒè¯æ˜¯å¦æˆåŠŸ
 
-2. vim°²×°
+2. vimå®‰è£…
 
    - `sudo apt-get install vim`
 
-   - `git clone git@github.com:shengfzy/Vim-config.git`½«ÎÒµÄ.vimrcÅäÖÃÎÄ¼şcloneµ½±¾µØ
+   - `git clone git@github.com:shengfzy/Vim-config.git`å°†æˆ‘çš„.vimrcé…ç½®æ–‡ä»¶cloneåˆ°æœ¬åœ°
 
-   - `vim ~/.vimrc`Ìí¼ÓÈçÏÂ´úÂë£º
+   - `vim ~/.vimrc`æ·»åŠ å¦‚ä¸‹ä»£ç ï¼š
 
-     `source Vim-configÂ·¾¶/Vim-config/.vimrc`
+     `source Vim-configè·¯å¾„/Vim-config/.vimrc`
 
-   - °²×°Vundle
+   - å®‰è£…Vundle
 
      - `mkdir -P ~/.vim/bundle/Vundle`
      - `cd ~/.vim/bundle/Vundle`
      - `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
-   - ½øÈëvim ÊäÈë:PluginInstall°²×°vim²å¼ş£¬²å¼ş¿ÉÔÚ.vimrcÖĞÌí¼Ó
+   - è¿›å…¥vim è¾“å…¥:PluginInstallå®‰è£…vimæ’ä»¶ï¼Œæ’ä»¶å¯åœ¨.vimrcä¸­æ·»åŠ 
 
-3. ~~°²×°vmware-tools£¬×÷ÓÃÖ÷ÒªÓĞÁ½¸ö£º~~
+3. ~~å®‰è£…vmware-toolsï¼Œä½œç”¨ä¸»è¦æœ‰ä¸¤ä¸ªï¼š~~
 
-   - ~~¿ÉÒÔÊ¹ĞéÄâ»úµÄ·Ö±æÂÊËæ×Å´°¿ÚµÄµ÷Õû¶ø±ä»¯~~
-   - ~~Êó±ê¿ÉÒÔ×ÔÓÉµÄÔÚwindowsºÍĞéÄâ»úÖ®¼äÒÆ¶¯~~
+   - ~~å¯ä»¥ä½¿è™šæ‹Ÿæœºçš„åˆ†è¾¨ç‡éšç€çª—å£çš„è°ƒæ•´è€Œå˜åŒ–~~
+   - ~~é¼ æ ‡å¯ä»¥è‡ªç”±çš„åœ¨windowså’Œè™šæ‹Ÿæœºä¹‹é—´ç§»åŠ¨~~
 
-4. ¿ªÆôFTP·şÎñ£¬·½±ãºÍwindowsÏµÍ³»¥´«ÎÄ¼ş£º
+4. å¼€å¯FTPæœåŠ¡ï¼Œæ–¹ä¾¿å’Œwindowsç³»ç»Ÿäº’ä¼ æ–‡ä»¶ï¼š
 
-   - windowsÏÂÏÂÔØ°²×°Filezilla£¨×¢ÒâÊÇ¿Í»§¶Ëclient°æ±¾£©
+   - windowsä¸‹ä¸‹è½½å®‰è£…Filezillaï¼ˆæ³¨æ„æ˜¯å®¢æˆ·ç«¯clientç‰ˆæœ¬ï¼‰
 
-   - ubuntuÏÂ°²×°vsftpd
-     1. °²×°Èí¼ş£ºsudo apt-get install vsftpd
-     2. ¸ü¸ÄÅäÖÃÎÄ¼ş£ºsudo vim /etc/vsftpd.conf
-     3. ÓÃvim´ò¿ªºó½«
+   - ubuntuä¸‹å®‰è£…vsftpd
+     1. å®‰è£…è½¯ä»¶ï¼šsudo apt-get install vsftpd
+     2. æ›´æ”¹é…ç½®æ–‡ä»¶ï¼šsudo vim /etc/vsftpd.conf
+     3. ç”¨vimæ‰“å¼€åå°†
         `Local_enable=YES`
         `write_enable=YES`
-        Á½ĞĞÇ°µÄ×¢ÊÍÈ¥µô£¬±£´æÍË³ö
-     4. ÖØÆô·şÎñ£ºsudo /etc/init.d/vsftpd restart
+        ä¸¤è¡Œå‰çš„æ³¨é‡Šå»æ‰ï¼Œä¿å­˜é€€å‡º
+     4. é‡å¯æœåŠ¡ï¼šsudo /etc/init.d/vsftpd restart
 
-5. NFS·şÎñ¿ªÆô
+5. NFSæœåŠ¡å¼€å¯
    - sudo apt-get install nfs-kernel-server rpcbind
-   - ÅäÖÃnfs£º
+   - é…ç½®nfsï¼š
      1. sudo vim /etc/exports
-     2. ÔÚÎÄ¼ş×îºóÌí¼Ó£º/home/matteo/linux/nfs *(rw,sync,no_root_squash)
+     2. åœ¨æ–‡ä»¶æœ€åæ·»åŠ ï¼š/home/matteo/linux/nfs *(rw,sync,no_root_squash)
      3. sudo /etc/init.d/nfs-kernel-server restart
 
-6. SSH·şÎñ¿ªÆô
+6. SSHæœåŠ¡å¼€å¯
 
    - sudo apt-get install openssh-server
 
-7. ½»²æ±àÒë¹¤¾ß°²×°
+7. äº¤å‰ç¼–è¯‘å·¥å…·å®‰è£…
    - sudo mkdir /usr/local/arm
    - sudo cp gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz /usr/local/arm -f
    - cd /usr/local/arm
    - sudo tar -vxf gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz
    - sudo vim /etc/profile
-   - ÔÚÎÄ¼ş×îºóÊäÈë£ºexport PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin
+   - åœ¨æ–‡ä»¶æœ€åè¾“å…¥ï¼šexport PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin
 
-8. °²×°Ïà¹Ø¿âÎÄ¼ş
+8. å®‰è£…ç›¸å…³åº“æ–‡ä»¶
    - sudo apt-get install lsb-core lib32stdc++6
-   - ½»²æ±àÒëÆ÷ÑéÖ¤£ºarm-linux-gnueabihf-gcc -v
+   - äº¤å‰ç¼–è¯‘å™¨éªŒè¯ï¼šarm-linux-gnueabihf-gcc -v
 
-9. vscode°²×°
+9. vscodeå®‰è£…
 
    - c/c++
    - c/c++ Snippets
@@ -88,37 +88,37 @@
    - ARM
    - vscode-icons
    - compareit
-   - DeviceTree¼´¿É
+   - DeviceTreeå³å¯
    - Python
    - Python Snippets
 
-10. windowsÏÂÏÂÔØ°²×°Xshell´®¿Úµ÷ÊÔÈí¼ş£¬ÓÃÕâ¸öÈí¼şÖ÷ÒªÓ¦ÎªËü½çÃæ¿´×ÅÔôÊæ·ş
+10. windowsä¸‹ä¸‹è½½å®‰è£…Xshellä¸²å£è°ƒè¯•è½¯ä»¶ï¼Œç”¨è¿™ä¸ªè½¯ä»¶ä¸»è¦åº”ä¸ºå®ƒç•Œé¢çœ‹ç€è´¼èˆ’æœ
 
-11. CH340´®¿ÚĞ¾Æ¬Çı¶¯°²×°
+11. CH340ä¸²å£èŠ¯ç‰‡é©±åŠ¨å®‰è£…
 
-    - linux ÄÚºË°æ±¾2.6ÒÔÉÏ×Ô´øÁËCH340Ğ¾Æ¬
+    - linux å†…æ ¸ç‰ˆæœ¬2.6ä»¥ä¸Šè‡ªå¸¦äº†CH340èŠ¯ç‰‡
 
 ---
 
-1. °²×°deepin-wine
+~~1. å®‰è£…deepin-wine~~
 
-   - `git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git`
+   ~~- `git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git`~~
 
-   - ½øÈëgit²Ö¿âÖ´ĞĞ`./install.sh`
+   ~~- è¿›å…¥gitä»“åº“æ‰§è¡Œ`./install.sh`~~
 
-   - »ñÈ¡Î¢ĞÅÈİÆ÷
+   ~~- è·å–å¾®ä¿¡å®¹å™¨~~
 
-     ```
-   wget https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/deepin.com.wechat_2.6.2.31deepin0_i386.deb      
-     ```
+   ~~```~~
+   ~~wget https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/deepin.com.wechat_2.6.2.31deepin0_i386.deb      
+   ~~```~~
 
-   - °²×°Î¢ĞÅ
+   ~~- å®‰è£…å¾®ä¿¡~~
 
-     `sudo dpkg -i deepin.com.wechat_2.6.2.31deepin0_i386.deb`
+   ~~`sudo dpkg -i deepin.com.wechat_2.6.2.31deepin0_i386.deb`~~
 
-2. °Ù¶ÈÍøÅÌ
+2. ç™¾åº¦ç½‘ç›˜
    
-   - ¹ÙÍøÖ±½ÓÌá¹©deb°ü£¬°²×°¼´¿É
-3. office°ì¹«Èí¼ş
+   - å®˜ç½‘ç›´æ¥æä¾›debåŒ…ï¼Œå®‰è£…å³å¯
+3. officeåŠå…¬è½¯ä»¶
    
-   - wps¹ÙÍøÌá¹©linux°æ±¾£¬°²×°¼´¿É
+   - wpså®˜ç½‘æä¾›linuxç‰ˆæœ¬ï¼Œå®‰è£…å³å¯
