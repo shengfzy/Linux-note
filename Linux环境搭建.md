@@ -72,7 +72,7 @@
      ```
    
    - sudo service nfs-kernel-server restart
-   
+
 6. TFTP服务器
 
    - sudo apt-get install tftp-hpa tftpd-hpa
@@ -177,9 +177,81 @@
 
    ~~`sudo dpkg -i deepin.com.wechat_2.6.2.31deepin0_i386.deb`~~
 
-2. 百度网盘
-   
+1. 安装Docker版沙盒微信
+
+   - 安装Docker
+
+     1. 卸载旧版本Docker-engine
+
+        ```bash
+        $ sudo apt-get remove docker \
+        							   docker-engine \
+        							   docker.io
+        ```
+
+     2. 使用脚本安装docker
+
+        ```bash
+        $ curl -fsSL get.docker.com -o get-docker.sh
+        $ sudo sh get-docker.sh --mirror Aliyun
+        # $ sudo sh get-docker.sh --mirror AzureChinaCloud
+        ```
+
+     3. 启动Docker CE
+
+        ```bash
+        $ sudo systemctl enable docker
+        $ sudo systemctl start docker
+        ```
+
+     4. 建立docker用户组
+
+        ```bash
+        $ sudo groupadd docker
+        $ sudo usermod -aG ${USER} docker
+        $ sudo service docker restart
+        ```
+
+     5. 测试是否安装正确
+
+        ```bash
+        $ docker run hello-world
+        ```
+
+     6. 镜像加速
+
+        ```bash
+        $ sudo vim /etc/docker/daemon.json
+        {
+        	"registry-mirrors": [
+        		"https://dockerhub.azk8s.cn",
+        		"https://hub-mirror.c.163.com"
+        	]
+        }
+        ```
+
+        之后重启服务
+
+        ```bash
+        $ sudo systemctl daemon-reload
+        $ sudo systemctl restart docker
+        ```
+
+     7. 安装沙盒微信
+
+        ```bash
+        curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
+        ```
+
+2. 安装google输入法：
+
+   1. 在ubuntu商店上安装fcitx及相关组件
+   2. sudo apt-get install fcitx-googlepinyin
+
+3. 百度网盘
+
    - 官网直接提供deb包，安装即可
-3. office办公软件
-   
+
+4. office办公软件
+
    - wps官网提供linux版本，安装即可
