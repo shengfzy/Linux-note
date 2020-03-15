@@ -55,16 +55,72 @@
 
 5. NFS服务开启
    - sudo apt-get install nfs-kernel-server rpcbind
+   
    - 配置nfs：
      1. sudo vim /etc/exports
      2. 在文件最后添加：/home/matteo/linux/nfs *(rw,sync,no_root_squash)
-     3. sudo /etc/init.d/nfs-kernel-server restart
+  3. sudo /etc/init.d/nfs-kernel-server restart
+     
+   - uboot中使用的NFS版本为V2版本，而ubuntu中版本为V3,V4及以上版本，需要让ubuntu兼容V2版本, 否则在下载文件的时候会产生***ERROR:File lookup fail
+   
+   - sudo vim /etc/default/nfs-kernel-server
+   
+     ```bash
+     RPCNFSDCOUNT = '-V 2 8'
+     RPCMOUNTDOPTS="-V 2 --manage-gids"
+     RPCNFSDOPTS="--nfs-version 2,3,4 --debug --syslog"
+     ```
+   
+   - sudo service nfs-kernel-server restart
+   
+6. TFTP服务器
 
-6. SSH服务开启
+   - sudo apt-get install tftp-hpa tftpd-hpa
+
+   - 配置:
+
+     1. vim /etc/xinetd.d/tftp
+
+     2. 输入如下内容
+
+        ```c
+        server tftp
+        {
+         socket_type = dgram
+         protocol = udp
+         wait = yes
+         user = root
+         server = /usr/sbin/in.tftpd
+         server_args = -s /home/zuozhongkai/linux/tftpboot/
+         disable = no
+         per_source = 11
+         cps = 100 2
+         flags = IPv4
+        }
+        ```
+
+     3. sudo service tftpd-hpa start
+
+     4. vim /etc/default/tftpd-hpa
+
+     5. 输入以下内容
+
+        ```bash
+        # /etc/default/tftpd-hpa
+        
+        TFTP_USERNAME="tftp"
+        TFTP_DIRECTORY="/home/matteo/linux/tftpboot"
+        TFTP_ADDRESS=":69"
+        TFTP_OPTIONS="-l -c -s"
+        ```
+
+     6. sudo service tftpd-hpa restart
+
+7. SSH服务开启
 
    - sudo apt-get install openssh-server
 
-7. 交叉编译工具安装
+8. 交叉编译工具安装
    - sudo mkdir /usr/local/arm
    - sudo cp gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz /usr/local/arm -f
    - cd /usr/local/arm
@@ -72,11 +128,11 @@
    - sudo vim /etc/profile
    - 在文件最后输入：export PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin
 
-8. 安装相关库文件
+9. 安装相关库文件
    - sudo apt-get install lsb-core lib32stdc++6
    - 交叉编译器验证：arm-linux-gnueabihf-gcc -v
 
-9. vscode安装
+10. vscode安装
 
    - c/c++
    - c/c++ Snippets
@@ -97,9 +153,9 @@
    - Better Align
    - change-case
 
-10. windows下下载安装Xshell串口调试软件，用这个软件主要应为它界面看着贼舒服
+11. windows下下载安装Xshell串口调试软件，用这个软件主要应为它界面看着贼舒服
 
-11. CH340串口芯片驱动安装
+12. CH340串口芯片驱动安装
 
     - linux 内核版本2.6以上自带了CH340芯片
 
