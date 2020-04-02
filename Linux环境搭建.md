@@ -39,7 +39,7 @@
      ```
      
 - 进入vim 输入:PluginInstall安装vim插件，插件可在.vimrc中添加
-   
+  
 3. ~~安装vmware-tools，作用主要有两个：~~
 
    - ~~可以使虚拟机的分辨率随着窗口的调整而变化~~
@@ -71,7 +71,7 @@
    - sudo vim /etc/default/nfs-kernel-server
    
      ```bash
-     RPCNFSDCOUNT = '-V 2 8'
+     RPCNFSDCOUNT = "-V 2 8"
      RPCMOUNTDOPTS="-V 2 --manage-gids"
      RPCNFSDOPTS="--nfs-version 2,3,4 --debug --syslog"
      ```
