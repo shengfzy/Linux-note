@@ -64,8 +64,8 @@
    - 配置nfs：
      1. sudo vim /etc/exports
      2. 在文件最后添加：/home/matteo/linux/nfs *(rw,sync,no_root_squash)
-  3. sudo /etc/init.d/nfs-kernel-server restart
-     
+   
+   - sudo /etc/init.d/nfs-kernel-server restart
    - uboot中使用的NFS版本为V2版本，而ubuntu中版本为V3,V4及以上版本，需要让ubuntu兼容V2版本, 否则在下载文件的时候会产生***ERROR:File lookup fail
    
    - sudo vim /etc/default/nfs-kernel-server
