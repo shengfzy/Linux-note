@@ -27,25 +27,61 @@
 
      `source Vim-config路径/Vim-config/.vimrc`
 
-   - 安装Vundle
-
-     - `mkdir -P ~/.vim/bundle/Vundle`
-     - `cd ~/.vim/bundle/Vundle`
-     - `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-
-   - 安装vim-plug(用来替代Vundle)
-       ```bash
-     - curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-     ```
+   - 安装fzf
      
+     `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
+
+     `~/.fzf/install`
+
+   - 安装ripgrep
+
+      `curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb`
+
+      `sudo dpkg -i ripgrep_13.0.0_amd64.deb`
+
+   - 下载Plug.vim放在~/.vim/autoload/Plug.vim下
+
+      `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+   
 - 进入vim 输入:PluginInstall安装vim插件，插件可在.vimrc中添加
-  
-3. ~~安装vmware-tools，作用主要有两个：~~
+
+- vim升级到8.2
+  1. `wget https://codeload.github.com/vim/vim/tar.gz/v8.2.1258`
+  2. 
+     ```
+     $ mv v8.2.1258  vim-v8.2.1258.tar.gz
+     $ tar -xvzf vim-v8.2.1258.tar.gz
+     ```
+  3. 安装依赖
+   
+     `sudo apt install libncurses5-dev`
+  4. 编译安装
+     ```
+     $ cd vim-8.2.1258/
+     $ ./configure --prefix=$HOME/.local --enable-python3interp=yes && make && make install
+     ```
+  5. 链接
+     ```
+      alias vim='~/.local/bin/vim'
+      echo "alias vim='~/.local/bin/vim'" >> ~/.bashrc
+     ```
+  6. 查看版本
+   
+     `vim --version`
+
+- 安装YCM
+  1. `sudo apt-get install build-essential cmake python-dev python3-dev`
+  2. `cd ~/.vim/plugged/YouCompleteMe`
+  3. `git submodule update --init --recursive`
+  4. `./install.py --clang-completer`
+ 
+1. ~~安装vmware-tools，作用主要有两个：~~
 
    - ~~可以使虚拟机的分辨率随着窗口的调整而变化~~
    - ~~鼠标可以自由的在windows和虚拟机之间移动~~
 
-4. 开启FTP服务，方便和windows系统互传文件：
+2. 开启FTP服务，方便和windows系统互传文件：
 
    - windows下下载安装Filezilla（注意是客户端client版本）
 
@@ -58,7 +94,7 @@
         两行前的注释去掉，保存退出
      4. 重启服务：sudo /etc/init.d/vsftpd restart
 
-5. NFS服务开启
+3. NFS服务开启
    - sudo apt-get install nfs-kernel-server rpcbind
    
    - 配置nfs：
@@ -78,7 +114,7 @@
    
    - sudo service nfs-kernel-server restart
 
-6. TFTP服务器
+4. TFTP服务器
 
    - sudo apt-get install tftp-hpa tftpd-hpa
 
@@ -121,11 +157,11 @@
 
      6. sudo service tftpd-hpa restart
 
-7. SSH服务开启
+5. SSH服务开启
 
    - sudo apt-get install openssh-server
 
-8. 交叉编译工具安装
+6. 交叉编译工具安装
    - sudo mkdir /usr/local/arm
    - sudo cp gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz /usr/local/arm -f
    - cd /usr/local/arm
@@ -133,11 +169,11 @@
    - sudo vim /etc/profile
    - 在文件最后输入：export PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin
 
-9. 安装相关库文件
+7. 安装相关库文件
    - sudo apt-get install lsb-core lib32stdc++6
    - 交叉编译器验证：arm-linux-gnueabihf-gcc -v
 
-10. vscode安装
+8.  vscode安装
 
    - c/c++
    - c/c++ Snippets
